@@ -1,0 +1,33 @@
+int reverse(int x) {
+    long int result=0;
+    bool positive;
+    if (x>0){
+        positive=true;
+    }
+    else {
+        positive=false;
+        x=-x;
+    }
+    int a[10];
+    for(int i=9;i>=1;i--){
+        if (x/10^i!=0){
+            a[i]=x/10^i;
+            x=x-a[i]*10^i;
+        }
+        else
+            a[i]=0;
+    }
+    for(int i=0;i<=9;i++){
+        result=a[i]*10^i+result;
+    }
+    if (result>2.14748365*10^9-1 && positive)
+        return 0;
+    else if (result>2.14748365*10^9 && !positive)
+        return 0;
+    else{
+        if (positive)
+            return result;
+        else
+            return -result;
+    }        
+}
