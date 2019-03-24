@@ -62,3 +62,4 @@ int romanToInt(char* s) {
     }        
     return result;
 }
+评论中有一个差不多的程序，但是人家用了40ms，不知道时间躲在哪里，可能有一些小trick需要进一步学习来节约时间。
