@@ -1,0 +1,23 @@
+bool isPalindrome(int x) {
+    if (x<0)
+        return false;
+
+    int size=0;
+    int tem=x,rev;
+    while(tem!=0){
+        tem=tem/10;
+        size++;
+    }
+    while(x!=0){
+        tem=x%10;
+        rev=x/pow(10,size-1);
+        if (tem!=rev)
+            return false;
+        x=(x-rev*pow(10,size-1))/10,size-=2;
+            
+    }
+    return true;
+        
+}
+
+这个方法能够防止溢出，但是时间复杂度比整数重排多。
