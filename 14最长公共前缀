@@ -1,0 +1,22 @@
+char* longestCommonPrefix(char** strs, int strsSize) {
+    bool mark=true;
+    int i=0;
+    while(mark){
+        for (int j=1;j<strsSize;j++){
+            if (strs[0][i]!=strs[j][i] || strs[0][i]=='\0' || strs[j][i]=='\0'){
+                mark=false;
+                break;
+            }
+        }
+        i++;        
+    }
+    char* result=(char*) malloc(sizeof(char*)*i);
+	  i=i-2;
+   while(i>=0){
+        result[i]=strs[0][i];
+		    i--;
+	 }
+  return result;   
+}
+
+不知道为什么，vs2012上通过了，但是leetcode上总是显示buffer溢出，不懂
